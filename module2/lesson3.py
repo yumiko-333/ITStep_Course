@@ -1,6 +1,6 @@
 import os
 
-os.system('cls') 
+os.system("cls")
 
 # ** -- піднесення до степення
 # a = 5
@@ -32,7 +32,7 @@ uah = 180
 usd = uah / 45.05
 print(f"Ваші {uah} гривень це {usd:.5f} доларів")
 
-# пиріжок коштує 35 грн, користувач вводить свій бюджет. 
+# пиріжок коштує 35 грн, користувач вводить свій бюджет.
 # вивести скільки пиріжків він може купити
 
 balance = float(input("Введіть ваш баланс: "))
@@ -40,5 +40,5 @@ pastry_price = 35
 
 # кількість пиріжків
 
-pastry_count = balance // pastry_price 
+pastry_count = balance // pastry_price
 print(f"ви можете купити {pastry_count:.0f} пиріжків")

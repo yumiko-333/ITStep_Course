@@ -1,6 +1,6 @@
 import os
 
-os.system('cls')
+os.system("cls")
 
 # age = 20
 # has_ticket = True

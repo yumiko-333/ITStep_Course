@@ -1,6 +1,6 @@
 import os
 
-os.system('cls')
+os.system("cls")
 
 
 # temperature = 5
@@ -22,7 +22,7 @@ os.system('cls')
 
 # користувач вводить назву товару, вивести інфу про товар
 
-is_purchased = False 
+is_purchased = False
 
 
 product = str(input("Введіть назву товару: "))

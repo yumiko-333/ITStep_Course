@@ -1,6 +1,6 @@
 import os
 
-os.system('cls')
+os.system("cls")
 
 # Завдання 1
 
@@ -33,8 +33,12 @@ os.system('cls')
 #   Створіть для кожного товару змінну з кількістю цього
 #   товару у кошику для подальшої роботи
 
-print("Товари: \n● подушка – 650 грн \n● ковдра – 1700 грн \n● лампа – 500 грн \n● брелок – 60 грн")
-print("\nМеню дій: \n● додати товар \n● видалити товар \n● очистити кошик \n● показати вміст кошики та суму покупки \n● вихід")
+print(
+    "Товари: \n● подушка – 650 грн \n● ковдра – 1700 грн \n● лампа – 500 грн \n● брелок – 60 грн"
+)
+print(
+    "\nМеню дій: \n● додати товар \n● видалити товар \n● очистити кошик \n● показати вміст кошики та суму покупки \n● вихід"
+)
 
 print()
 
@@ -62,17 +66,17 @@ while True:
 
         elif item == "ковдра":
             blanket += amount
-    
+
         elif item == "лампа":
-                lamp += amount
-    
+            lamp += amount
+
         elif item == "брелок":
-                keychain += amount
-    
+            keychain += amount
+
         else:
             print("Немає у наявності")
             continue
-    
+
     elif choise == 2:
         item = input("Виберіть потрібний вам товар: ")
         amount = int(input("Скільки штук? "))
@@ -82,42 +86,42 @@ while True:
 
         if item == "подушка":
             pillow -= amount
-            
+
             if pillow < 0:
                 pillow = 0
 
         elif item == "ковдра":
             blanket -= amount
-    
+
             if blanket < 0:
-                 blanket = 0
+                blanket = 0
 
         elif item == "лампа":
-                lamp -= amount
-    
-                if lamp < 0:
-                     lamp = 0
+            lamp -= amount
+
+            if lamp < 0:
+                lamp = 0
 
         elif item == "брелок":
-                keychain -= amount
+            keychain -= amount
 
-                if keychain < 0:
-                     keychain = 0
+            if keychain < 0:
+                keychain = 0
 
         else:
             print("Немає у наявності")
             continue
 
     elif choise == 3:
-        pillow = 0 
+        pillow = 0
         blanket = 0
         lamp = 0
         keychain = 0
 
         print("Кошик очищено!")
-    
+
     elif choise == 4:
-        total = (pillow * 650 + blanket * 1700 + lamp * 500 + keychain * 60)
+        total = pillow * 650 + blanket * 1700 + lamp * 500 + keychain * 60
 
         print("\nВМІСТ КОШИКА")
         print(f"Подушка: {pillow}")
@@ -128,8 +132,5 @@ while True:
         print(f"\nСума покупок: {total} грн")
 
     elif choise == 5:
-         print("До побачення")
-         break
-    
-    
-         
+        print("До побачення")
+        break

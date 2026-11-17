@@ -1,6 +1,6 @@
 import os
 
-os.system('cls') # щоб термінал очищався кожен раз після запуска, так зручніше)
+os.system("cls")  # щоб термінал очищався кожен раз після запуска, так зручніше)
 
 # завдання 1
 
@@ -48,8 +48,8 @@ os.system('cls') # щоб термінал очищався кожен раз п
 # feet = 3.2808399
 # yard = 1.0936133
 
-# metres_feet = metres * feet 
-# metres_yard = metres * yard 
+# metres_feet = metres * feet
+# metres_yard = metres * yard
 
 # print(f"З метрів на фути це: {metres_feet:.2f} фута")
 # print(f"З метрів на ярди це: {metres_yard:.2f} ярдів")
@@ -102,7 +102,7 @@ os.system('cls') # щоб термінал очищався кожен раз п
 # apples = int(input("Введіть кількість яблук: "))
 # milk = float(input("Введіть літри молока: "))
 
-# apples_cake = apples // 4 
+# apples_cake = apples // 4
 # milk_cake = milk // 1.2
 
 # cakes = min(apples_cake, milk_cake)
@@ -113,4 +113,3 @@ os.system('cls') # щоб термінал очищався кожен раз п
 # print(f"Ви можете спекти: {cakes} пирогів та \nв вас залишится: \n{rest_apples} яблук і {rest_milk:.1f} літрів молока")
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
-

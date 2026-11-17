@@ -1,6 +1,6 @@
 import os
 
-os.system('cls')
+os.system("cls")
 
 # Цикл for
 
@@ -11,7 +11,7 @@ os.system('cls')
 
 # щоб легко задати послідовність є функція range
 
-#range(stop) -- 0, 1, 2, ... stop-1 (початок з 0, кінець не включно)
+# range(stop) -- 0, 1, 2, ... stop-1 (початок з 0, кінець не включно)
 
 # for num in range(5):
 #     print(num)
@@ -34,14 +34,14 @@ os.system('cls')
 # змінні у циклі
 # порахувати суму чисел та їхню кількість
 
-# total = 0 
+# total = 0
 # count = 0
 
 # for num in range(10,20):
 #     total += num
 #     count += 1
 
-# print(f"Сума {total} \nКількість {count}") 
+# print(f"Сума {total} \nКількість {count}")
 
 
 count = int(input("скільки разів: "))

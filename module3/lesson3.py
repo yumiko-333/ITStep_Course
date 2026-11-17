@@ -1,6 +1,6 @@
 import os
 
-os.system('cls')
+os.system("cls")
 
 # константи
 # BALL_PRICE = 30
