@@ -45,5 +45,6 @@ os.system('cls')
 
 
 count = int(input("скільки разів: "))
+
 for i in range(count):
     print("hi", i)
