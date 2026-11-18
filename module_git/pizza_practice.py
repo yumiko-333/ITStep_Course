@@ -29,12 +29,24 @@
 # загальна вартість
 
 while True:
+    print()
     print("Виберіть опцію з меню")
+
     option = int(input("\n1. Вибрати піццу \n2. Вихід \nВаш вибір: "))
 
     if option == 1:
-        pizza = input("Яку піццу бажаєте? ")
-        amount = int(input("Скільки штук? "))
+        print(
+            "\nПіцци: \nМаргарита - 150 грн \nПепероні - 180 грн \nЧотири сири - 200 грн"
+        )
+
+        pizza = input("\nЯку піццу бажаєте? ")
+
+        if pizza == "Маргарита" or pizza == "Пепероні" or pizza == "Чотири сири":
+            amount = int(input("Скільки штук? "))
+
+        else:
+            print("Такої піцци у нас немає, спробуйте ще раз.")
+            continue
 
         print(f"Замовлено піццу {pizza} {amount} шт")
 
