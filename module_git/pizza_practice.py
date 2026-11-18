@@ -38,6 +38,8 @@ four_cheese_amount = 0
 
 total = 0
 
+total_amount = 0
+
 while True:
     print()
     print("Виберіть опцію з меню")
@@ -58,20 +60,53 @@ while True:
         if pizza == "Маргарита":
             amount = int(input("Скільки штук? "))
 
-            margherita_amount += amount
-            total += margherita_cost * amount
+            if amount > 0:
+                if total_amount + amount <= 15:
+                    margherita_amount += amount
+                    total_amount += amount
+                    total += margherita_cost * amount
+
+                else:
+                    print("Ви не можете замовити більше 15 піц!")
+                    continue
+
+            else:
+                print("Кількість не може бути 0, або від'ємна! ")
+                continue
 
         elif pizza == "Пепероні":
             amount = int(input("Скільки штук? "))
 
-            peperoni_amount += amount
-            total += peperoni_cost * amount
+            if amount > 0:
+                if total_amount + amount <= 15:
+                    peperoni_amount += amount
+                    total_amount += amount
+                    total += peperoni_cost * amount
+
+                else:
+                    print("Ви не можете замовити більше 15 піц!")
+                    continue
+
+            else:
+                print("Кількість не може бути 0, або від'ємна! ")
+                continue
 
         elif pizza == "Чотири сири":
             amount = int(input("Скільки штук? "))
 
-            four_cheese_amount += amount
-            total += four_cheese_cost * amount
+            if amount > 0:
+                if total_amount + amount <= 15:
+                    four_cheese_amount += amount
+                    total_amount += amount
+                    total += four_cheese_cost * amount
+
+                else:
+                    print("Ви не можете замовити більше 15 піц!")
+                    continue
+
+            else:
+                print("Кількість не може бути 0, або від'ємна! ")
+                continue
 
         else:
             print("Такої піцци у нас немає, спробуйте ще раз.")
@@ -109,3 +144,10 @@ while True:
         print(f"Загальна вартість: {total} грн")
         print("=========================================")
         print("Дякуємо за замовлення!")
+
+        print("\nГарного дня!")
+        break
+
+    else:
+        print("Такої опції немає! Спробуйте ще раз. ")
+        continue
