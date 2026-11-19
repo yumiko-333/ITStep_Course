@@ -16,21 +16,25 @@ os.system("cls")
 
 # метод count \/\/
 
-# text = "it is amazing"
-# count_i = text.count("i")
+# text = input("Введіть свій рядок: ")
+# symbol = input("Введіть свій символ: ")
 
-# print(f"B {text} символ 'i' зустрічається {count_i} рази")
+# count_symbol = text.count(symbol)
+
+# print(f"B {text} символ {symbol} зустрічається {count_symbol} рази")
 
 # метод for \/\/
 
-# text = "it is amazing"
-# count_i = 0
+# text = input("Введіть свій рядок: ")
+# symbol = input("Введіть свій символ: ")
 
-# for symbol in text:
-#     if symbol == "i":
-#         count_i += 1
+# count_symbol = 0
 
-# print(f"B {text} символ 'i' зустрічається {count_i} рази")
+# for ch in text:
+#     if ch == symbol:
+#         count_symbol += 1
+
+# print(f"B {text} символ {symbol} зустрічається {count_symbol} рази")
 
 # ---------------------------------------------------------------------------------------------
 
@@ -43,13 +47,153 @@ os.system("cls")
 # ● чи є там слово python
 # ● кількість шиплячих літер – szh
 
-user_line = input("Write down your line: ")
-length = len(user_line)
+# user_line = input("Write down your line: ")
+# length = len(user_line)
 
-secret_word = "python"
+# print(f"У вашому рядку {length} символів ")
 
-if secret_word in user_line:
-    print(f"{secret_word} є у вашому рядку!")
+# secret_word = "python"
 
-else:
-    print(f"{secret_word} немає у вашому рядку")
+# if secret_word in user_line:
+#     print(f"{secret_word} є у вашому рядку!")
+
+# else:
+#     print(f"{secret_word} немає у вашому рядку")
+
+# count_s = user_line.count("s")
+# count_z = user_line.count("z")
+# count_h = user_line.count("h")
+
+# szh_letters = count_h + count_s + count_z
+# print(f"У вашому рядку {szh_letters} шиплячих літер")
+
+# --------------------------------------------------------------------------------------------
+
+# Завдання 3
+#
+# Користувач вводить тест. Потрібно замінити всі пробіли
+# на дефіси. Виправіть помилку в коді \/\/
+
+# text = input("Введіть текст: ")
+
+# result = text.replace(" ", "-")
+# print(f"Змінений текст: {text}")        # проблема у цьому рядку тут замість змінної text має бути змінна result
+
+# правильний варіант коду \/\/\/
+
+
+# text = input("Введіть текст: ")
+
+# result = text.replace(" ", "-")
+# print(f"Змінений текст: {result}")
+
+# --------------------------------------------------------------------------------------------
+
+# Завдання 4
+
+# Користувач вводить рядок та слово. Порахуйте скільки
+# разів це слово зустрічається у рядку.
+
+# line = input("Введіть свій рядок: ")
+# word = input("Введіть своє слово: ")
+
+# count_word = line.count(word)
+# print(f"Ваше слово зустрілося у вашому рядку -- {count_word} разів")
+
+# ---------------------------------------------------------------------------------------------
+
+# Завдання 5
+#
+# При оформлені посилки заборонено перевозити
+# наступні речі:
+#
+# ● ножі
+# ● гроші
+# ● сильні отрути
+#
+# Виправіть помилку в коді
+
+# items = input("Введіть ваші речі: ")
+# items = items.lower                             # проблема 1 -- lower це метод, тому мають бути дужки ()
+
+# if "ніж" or "гроші" or "отрута" in items:           # проблема 2 -- if сприймає будь який не порожній рядок за True, треба перевіряти все окремо
+#     print("У вас є речі які заборонено перевозити")
+# else:
+#     print("Оформлено доставку")
+
+
+# правильний варіант коду \/\/\/
+
+
+# items = input("Введіть ваші речі: ")
+# items = items.lower()
+
+# if "ніж" in items or "гроші" in items or "отрута" in items:
+#     print("У вас є речі які заборонено перевозити")
+# else:
+#     print("Оформлено доставку")
+
+# -------------------------------------------------------------------------------------
+
+# Завдання 6
+
+# Користувач вводить текст. Порахуйте скільки в ньому
+# літер та цифр
+
+# text = input("Введіть ваш текст: ")
+
+# count_int = 0
+# count_str = 0
+
+# for symbol in text:
+#     if symbol.isdigit():
+#         count_int += 1
+
+#     if symbol.isalpha():
+#         count_str += 1
+
+# print("\n===========У вашому тексті============")
+# print(f"{count_str} літер та {count_int} цифр")
+
+# ---------------------------------------------------------------------------------------
+
+# Завдання 7
+
+# Користувач вводить пароль поки не введе його
+# правильно.
+# Правильний пароль повинен:
+
+# ● Бути довшим за 8 символів
+# ● Містити хоча б одну цифру
+# ● Містити хоча б одну літеру
+
+
+while True:
+    password = input("\nВведіть свій пароль: ")
+
+    length = len(password)
+    count_str = 0
+    count_int = 0
+
+    if length < 8:
+        print("Пароль має бути більше 8 символів!")
+        continue
+
+    for ch in password:
+        if ch.isdigit():
+            count_int += 1
+
+        if ch.isalpha():
+            count_str += 1
+
+    if count_str < 1:
+        print("Пароль має містити хоча б одну літеру!")
+        continue
+
+    if count_int < 1:
+        print("Пароль має містити хоча б одну цифру!")
+        continue
+
+    if length >= 8 and count_int >= 1 and count_str >= 1:
+        print("Пароль безпечний!")
+        break
