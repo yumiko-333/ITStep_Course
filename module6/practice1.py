@@ -143,17 +143,17 @@ os.system("cls")
 # text = input("Введіть ваш текст: ")
 
 # count_int = 0
-# count_str = 0
+# count_alpha = 0
 
 # for symbol in text:
 #     if symbol.isdigit():
 #         count_int += 1
 
 #     if symbol.isalpha():
-#         count_str += 1
+#         count_alpha += 1
 
 # print("\n===========У вашому тексті============")
-# print(f"{count_str} літер та {count_int} цифр")
+# print(f"{count_alpha} літер та {count_int} цифр")
 
 # ---------------------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ while True:
     password = input("\nВведіть свій пароль: ")
 
     length = len(password)
-    count_str = 0
+    count_alpha = 0
     count_int = 0
 
     if length < 8:
@@ -184,9 +184,9 @@ while True:
             count_int += 1
 
         if ch.isalpha():
-            count_str += 1
+            count_alpha += 1
 
-    if count_str < 1:
+    if count_alpha < 1:
         print("Пароль має містити хоча б одну літеру!")
         continue
 
@@ -194,6 +194,6 @@ while True:
         print("Пароль має містити хоча б одну цифру!")
         continue
 
-    if length >= 8 and count_int >= 1 and count_str >= 1:
+    if length >= 8 and count_int >= 1 and count_alpha >= 1:
         print("Пароль безпечний!")
         break
