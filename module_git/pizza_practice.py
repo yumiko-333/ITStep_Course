@@ -28,9 +28,11 @@
 # Треба вивести які піци були замовлені, їхня вартість та
 # загальна вартість
 
-margherita_cost = 150
-peperoni_cost = 180
-four_cheese_cost = 200
+MAX_PIZZA_AMOUNT = 15
+
+MARGHERITA_COST = 150
+PEPERONI_COST = 180
+FOUR_CHEESE_COST = 200
 
 margherita_amount = 0
 peperoni_amount = 0
@@ -45,74 +47,46 @@ while True:
     print("Виберіть опцію з меню")
 
     option = int(
-        input(
-            "\n1. Вибрати піццу \n2. Вихід \n3. Показати все замовлення \nВаш вибір: "
-        )
+        input("\n1. Вибрати піцу \n2. Вихід \n3. Показати все замовлення \nВаш вибір: ")
     )
 
     if option == 1:
         print(
-            "\nПіцци: \nМаргарита - 150 грн \nПепероні - 180 грн \nЧотири сири - 200 грн"
+            "\nПіци: \nМаргарита - 150 грн \nПепероні - 180 грн \nЧотири сири - 200 грн"
         )
 
-        pizza = input("\nЯку піццу бажаєте? ")
+        pizza = input("\nЯку піцу бажаєте? ")
 
-        if pizza == "Маргарита":
-            amount = int(input("Скільки штук? "))
-
-            if amount > 0:
-                if total_amount + amount <= 15:
-                    margherita_amount += amount
-                    total_amount += amount
-                    total += margherita_cost * amount
-
-                else:
-                    print("Ви не можете замовити більше 15 піц!")
-                    continue
-
-            else:
-                print("Кількість не може бути 0, або від'ємна! ")
-                continue
-
-        elif pizza == "Пепероні":
-            amount = int(input("Скільки штук? "))
-
-            if amount > 0:
-                if total_amount + amount <= 15:
-                    peperoni_amount += amount
-                    total_amount += amount
-                    total += peperoni_cost * amount
-
-                else:
-                    print("Ви не можете замовити більше 15 піц!")
-                    continue
-
-            else:
-                print("Кількість не може бути 0, або від'ємна! ")
-                continue
-
-        elif pizza == "Чотири сири":
-            amount = int(input("Скільки штук? "))
-
-            if amount > 0:
-                if total_amount + amount <= 15:
-                    four_cheese_amount += amount
-                    total_amount += amount
-                    total += four_cheese_cost * amount
-
-                else:
-                    print("Ви не можете замовити більше 15 піц!")
-                    continue
-
-            else:
-                print("Кількість не може бути 0, або від'ємна! ")
-                continue
-
-        else:
-            print("Такої піцци у нас немає, спробуйте ще раз.")
+        if pizza != "Маргарита" and pizza != "Пепероні" and pizza != "Чотири сири":
+            print("Такої піци у нас немає, спробуйте ще раз.")
             continue
 
-        print(f"Замовлено піццу {pizza} {amount} шт")
+        amount = int(input("Скільки штук? "))
+
+        if amount <= 0:
+            print("Кількість не може бути 0, або від'ємна! ")
+            continue
+
+        if total_amount + amount > MAX_PIZZA_AMOUNT:
+            print("Ви не можете замовити більше 15 піц!")
+            continue
+
+        if pizza == "Маргарита":
+            margherita_amount += amount
+            total_amount += amount
+            total += MARGHERITA_COST * amount
+
+        elif pizza == "Пепероні":
+            peperoni_amount += amount
+            total_amount += amount
+            total += PEPERONI_COST * amount
+
+        elif pizza == "Чотири сири":
+            four_cheese_amount += amount
+            total_amount += amount
+            total += FOUR_CHEESE_COST * amount
+
+        print(f"Замовлено піцу {pizza} {amount} шт")
 
     elif option == 2:
         print("Гарного вам дня!")
@@ -121,23 +95,23 @@ while True:
     elif option == 3:
         print()
         print("==========ВАШЕ ЗАМОВЛЕННЯ==============")
-        print("\nПіцца  \tКількість \tВартість")
+        print("\nПіца  \tКількість \tВартість")
 
         print("--------------------------------------")
 
         if margherita_amount > 0:
             print(
-                f"Маргарита \t{margherita_amount} \t{margherita_amount * margherita_cost} грн"
+                f"Маргарита \t{margherita_amount} \t{margherita_amount * MARGHERITA_COST} грн"
             )
 
         if peperoni_amount > 0:
             print(
-                f"Пепероні \t{peperoni_amount} \t{peperoni_amount * peperoni_cost} грн"
+                f"Пепероні \t{peperoni_amount} \t{peperoni_amount * PEPERONI_COST} грн"
             )
 
         if four_cheese_amount > 0:
             print(
-                f"Чотири сири \t{four_cheese_amount} \t{four_cheese_amount * four_cheese_cost} грн"
+                f"Чотири сири \t{four_cheese_amount} \t{four_cheese_amount * FOUR_CHEESE_COST} грн"
             )
 
         print("\n---------------------------------------")
