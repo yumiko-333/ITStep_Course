@@ -63,7 +63,7 @@ salaries = [800, 1000, 1500]
 
 # print(f"{salaries =}")
 
-# salaries.uppend("Peter")        ДОДАТИ
+# salaries.append("Peter")        ДОДАТИ
 last = salaries.pop(0)
 
 names = ["Ivan", "Оля", "Bob"]
