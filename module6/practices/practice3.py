@@ -154,18 +154,97 @@ os.system("cls")
 #     print(f"Різниця температур за {i + 1}-й день: {difference}")
 
 
-temperatures = []
+# temperatures = []
 
-days = int(input("Введіть кількість днів: "))
+# days = int(input("Введіть кількість днів: "))
 
-for i in range(days):
-    temperature = float(input(f"Введіть температуру за {i + 1}-й день: "))
-    temperatures.append(temperature)
+# for i in range(days):
+#     temperature = float(input(f"Введіть температуру за {i + 1}-й день: "))
+#     temperatures.append(temperature)
 
-print("\nТемператури:", temperatures)
-print()
+# print("\nТемператури:", temperatures)
+# print()
 
-for i in range(len(temperatures)):
-    difference = temperatures[i] - temperatures[i - 1]
+# for i in range(len(temperatures)):
+#     difference = temperatures[i] - temperatures[i - 1]
 
-    print(f"Різниця температур за {i + 1}-й день: {difference}")
+#     print(f"Різниця температур за {i + 1}-й день: {difference}")
+
+# -----------------------------------------------------------------------------------------
+
+# Завдання 6
+#
+#  Створіть застосунок банк. Є список з рахунками
+# клієнтів.
+#
+# Користувач вибирає одну з команд
+#
+# ● Додати клієнта
+# ● Видалити клієнта
+# ● Поповнити рахунок
+# ● Зняти кошти
+# ● Вихід
+#
+#  При додаванні клієнта, добавте рахунок в 0грн в
+#  кінець списку.
+#
+#  В інших випадках запросіть ID(індекс) клієнта і якщо
+# він вірний, то проведіть операцію
+
+clients_balance = []
+
+print(
+    "1. Додати клієнта \n2. Видалити клієнта \n3. Поповнити рахунок \n4. Зняти кошти \n5. Вихід"
+)
+
+while True:
+    choise = int(input("\nВиберіть команду: "))
+
+    if choise == 5:
+        print("Вихід..")
+        break
+
+    if choise == 1:
+        print("Клієнта додано!")
+        clients_balance.append(0)
+
+    elif choise == 2:
+        print("Клієнта видалено!")
+        clients_balance.pop()
+
+    elif choise == 3:
+        ask_id = int(input("Ваш ID: "))
+
+        if 0 < ask_id < len(clients_balance):
+            print("Клієнта знайдено!")
+
+            income = int(input("Скільки грошей поповнити: "))
+            clients_balance[ask_id] += income
+
+            print("Рахунок поповнено!")
+
+        else:
+            print("Клієнта не знайдено.")
+
+    elif choise == 4:
+        ask_id = int(input("Ваш ID: "))
+
+        if 0 < ask_id < len(clients_balance):
+            print("Клієнта знайдено!")
+
+            outcome = int(input("Скільки грошей зняти: "))
+
+            if clients_balance[ask_id] >= outcome:
+                print("Гроші знято!")
+                clients_balance[ask_id] -= outcome
+
+            else:
+                print("Недостатньо коштів на рахунку.")
+
+        else:
+            print("Клієнта не знайдено.")
+
+    else:
+        print("Такої команди немає. Спробуйте ще раз. ")
+
+print(f"Рахунки клієнтів: {clients_balance}")
